@@ -9,6 +9,31 @@ import Burger from '../burger';
 import CtaButtons from '../cta-buttons';
 import Link from '../link';
 
+let currentSection = null;
+let intervalHandle = null;
+
+
+
+const autoScroll = () => {
+  intervalHandle = setInterval(() => {
+    if (currentSection == null) {
+      currentSection = document.getElementsByTagName('section')[0];
+    }
+    console.log('setInterval');
+  console.log('currentSection', currentSection);
+  console.log('currentSection.nextSibling', currentSection.nextSibling);
+  currentSection = currentSection.nextSibling;
+  if(!currentSection) {
+    clearInterval(intervalHandle);
+    return;
+  }
+  currentSection.scrollIntoView({behavior: 'smooth' });
+}, 4000);
+
+};
+
+autoScroll();
+
 const Header = ({ isMobileMenuOpen, onBurgerClick }) => (
   <header className="safe-paddings absolute inset-x-0 top-0 z-50">
     <div className={clsx('flex max-w-full items-center justify-between')}>

@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types, jsx-a11y/html-has-lang */
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const fontsBasePath = '/fonts';
 
 const fontsPaths = ['/poppins-semibold.woff2', '/poppins-extrabold.woff2'];
+let currentSection = null;
 
 const HTML = ({
   htmlAttributes,
@@ -12,8 +13,8 @@ const HTML = ({
   preBodyComponents,
   body,
   postBodyComponents,
-}) => (
-  <html {...htmlAttributes}>
+}) => {
+  return (<html {...htmlAttributes}>
     <head>
       <meta charSet="utf-8" />
       <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -38,7 +39,7 @@ const HTML = ({
       <div key="body" id="___gatsby" dangerouslySetInnerHTML={{ __html: body }} />
       {postBodyComponents}
     </body>
-  </html>
-);
+  </html>);
+};
 
 export default HTML;

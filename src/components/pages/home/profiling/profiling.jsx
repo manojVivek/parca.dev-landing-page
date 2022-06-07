@@ -11,7 +11,7 @@ const linkText = 'Learn more';
 const linkUrl = '/';
 
 const Profiling = () => (
-  <section className="safe-paddings mt-52 lg:mt-40 lg:overflow-hidden md:mt-28 sm:mt-20">
+  <section className="safe-paddings mt-52 lg:mt-40 lg:overflow-hidden md:mt-28 sm:mt-20 pt-12">
     <div className="container">
       <h2 className="heading-6xl max-w-[1048px] lg:max-w-[800px]">{title}</h2>
       <p className="mt-4 max-w-[904px] text-2xl lg:max-w-[800px] lg:text-xl md:mt-3 md:text-lg">
